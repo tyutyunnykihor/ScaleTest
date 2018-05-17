@@ -42,6 +42,68 @@ header  {
       margin-bottom: 135px;
       font-weight: 400;
     }
+    .gallery__content {
+      .container {
+        width: 100%;
+        max-width: 1600px;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        .gallery__content__row {
+          margin-right: -15px;
+          margin-left: -15px;
+          &:before {
+            content: ' ';
+            display: table;
+          }
+          &:after {
+            display: table;
+            clear: both;
+          }
+          .column {
+            width:50%;
+            float: left;
+            .img-container {
+              &--circle {
+                width: 100%;
+                max-width: 700px;
+                >.circle-inner {
+                  width: 100%;
+                  &:after {
+                    background: url(/img/nz/nz@x1.jpg) repeat scroll 0 0 / cover;
+                    border-radius: 50%;
+                    content: "";
+                    display: block;
+                    height: 0;
+                    padding-bottom: 100%;
+                    width: 100%;
+                  }
+                }
+              }
+              &--rectangle {
+                width: 100%;
+                max-width: 700px;
+                height: 500px;
+                background-image: url(/img/nz2/nz@x1.jpg);
+                background-repeat: no-repeat;
+                background-size: contain;
+              }
+              &--square {
+
+              }
+
+              &--triangle {
+
+              }
+
+            }
+          }
+
+        }
+      }
+
+    }
   }
 }
 /**
