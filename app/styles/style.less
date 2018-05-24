@@ -21,6 +21,7 @@ header  {
  * main wrapper start
  */
 .main-wrapper {
+
   .gallery {
     background: #35b1bd;
     padding-bottom: 25px;
@@ -44,6 +45,7 @@ header  {
     }
     .gallery__content {
       .container {
+
         width: 100%;
         max-width: 1600px;
         padding-right: 15px;
@@ -62,14 +64,15 @@ header  {
             clear: both;
           }
           .column {
-            width:50%;
+            width: 50%;
             float: left;
             .img-container {
               &--circle {
                 width: 100%;
                 max-width: 700px;
-                >.circle-inner {
+                > .circle-inner {
                   width: 100%;
+
                   &:after {
                     background: url(/img/nz/nz@x1.jpg) repeat scroll 0 0 / cover;
                     border-radius: 50%;
@@ -78,8 +81,14 @@ header  {
                     height: 0;
                     padding-bottom: 100%;
                     width: 100%;
+                    border: 1px solid white;
+                    //&:after:hover {
+                    //  border: 4px solid red;
+                    //}
                   }
+
                 }
+
               }
               &--rectangle {
                 width: 100%;
@@ -88,21 +97,78 @@ header  {
                 background-image: url(/img/nz2/nz@x1.jpg);
                 background-repeat: no-repeat;
                 background-size: contain;
+                border: 1px solid white;
+              }
+              &--rectangle:hover {
+                border: 5px solid red;
               }
               &--square {
+                width: 100%;
+                max-width: 700px;
+                > .square-inner {
+                  width: 100%;
+                  &:after {
+                    background: url(/img/nz/nz@x1.jpg) repeat scroll 0 0 / cover;
 
+                    content: "";
+                    display: block;
+                    height: 0;
+                    padding-bottom: 100%;
+                    width: 100%;
+                    border: 1px solid white;
+                  }
+                }
               }
 
               &--triangle {
+                width: 100%;
+                max-width: 700px;
+                  .triangle-inner {
+                    .kwadrat {
+                      width: 100%;
+                      max-width: 700px;
+                      height: 600px;
+                      border-bottom: 1px solid white;
+                      overflow: hidden;
+                    }
+                    .trojkat {
+                      position: relative;
+                      overflow: hidden;
+                      transform: rotate(45deg) skew(10deg, 10deg);
+                      border-left: 1px solid white;
+                      border-top: 1px solid white;
+
+                      width: 100%;
+                      max-width: 600px;
+                      height: 600px;
+                      margin: 300px 0 0 48px;
+                    }
+
+                    .trojkat_bg {
+                      position: absolute;
+                      width: 200%;
+                      height: 200%;
+                      top: -67%;
+                      left: -50%;
+                      z-index: -1;
+                      background: url(/img/nz4/nz@x1.jpg);
+                      background-size: 100%;
+                      background-position: center top;
+                      transform: skew(-10deg, -10deg) rotate(-45deg);
+                      transition: .3s;
+                    }
+
+                    .trojkat_bg:hover {
+                      background-size: 90%;
+                    }
+                  }
 
               }
-
             }
-          }
 
+          }
         }
       }
-
     }
   }
 }
