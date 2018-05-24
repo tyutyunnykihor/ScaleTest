@@ -13,6 +13,16 @@
 <header class="header">
     <h1 class="header__title">Test</h1>
 </header>
+<div id="modal-wrapper" class="modal-wrapper">
+    <!-- Modal content -->
+    <div class="modal-content">
+       <span class="close">&times;</span>
+       <h2 class="modal-title"></h2>
+       <div class="modal-img-container">
+           <img class="modal-img" src="" srcset="" />
+       </div>
+    </div>
+</div>
 <div class="main-wrapper">
     <section class="gallery">
         <h2 class="gallery__title">New Zealand</h2>
@@ -22,25 +32,27 @@
                 <div class="gallery__content__row">
                     <div class="column">
                         <div class="img-container img-container--circle">
-                            <div class="circle-inner"></div>
+                            <div class="circle-inner" onclick="openModal(event)" data-image="0"></div>
                         </div>
                     </div>
                     <div class="column">
-                        <div class="img-container img-container--rectangle"></div>
+                        <div class="img-container img-container--rectangle">
+                            <div class="rectangle-inner" onclick="openModal(event)" data-image="1"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="gallery__content__row">
                     <div class="column">
                         <div class="img-container img-container--square">
-                            <div class="square-inner"></div>
+                            <div class="square-inner" onclick="openModal(event)" data-image="2"></div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="img-container img-container--triangle">
-                            <div class="triangle-inner">
+                            <div class="triangle-inner" >
                                 <div class="kwadrat">
                                     <div class="trojkat">
-                                        <div class="trojkat_bg"></div>
+                                        <div class="trojkat_bg" onclick="openModal(event)" data-image="3"></div>
                                     </div>
                                 </div>
                             </div>
