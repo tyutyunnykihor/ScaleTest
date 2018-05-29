@@ -49,32 +49,22 @@ header {
       .container {
         width: 100%;
         max-width: 1600px;
-        padding-right: 15px;
-        padding-left: 15px;
+
         margin-right: auto;
         margin-left: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         .gallery__content__row {
-          margin-right: -15px;
-          margin-left: -15px;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 30px;
-          &:before {
-            content: ' ';
-            display: table;
-          }
-          &:after {
-            display: table;
-            clear: both;
-          }
+
           .column {
+            display: flex;
             width: 50%;
-            float: left;
+
             .img-container {
               &:hover {
 
@@ -82,6 +72,7 @@ header {
               &--circle {
                 width: 100%;
                 max-width: 700px;
+                padding: 100px;
                 > .circle-inner {
                   width: 100%;
 
@@ -109,24 +100,38 @@ header {
                 }
               }
               &--rectangle {
+                width: 100%;
+                height: 80%;
+                max-width: 700px;
+                padding: 100px;
+
                 > .rectangle-inner {
                   width: 100%;
-                  max-width: 700px;
-                  height: 500px;
-                  background-image: url(/img/nz2/nz@x1.jpg);
-                  background-repeat: no-repeat;
-                  background-size: contain;
-                  border: 1px solid white;
+                  height: 100%;
+                  &:after {
+                    background: url(/img/nz2/nz@x1.jpg)  repeat scroll 0 0 / cover;
+                    content: "";
+                    display: block;
+                    height: 0;
+                    padding-bottom: 80%;
+                    width: 100%;
+                    border: 1px solid white;
+                  }
+                  &:hover {
+                    opacity: 0.7;
+                    cursor: pointer;
+                  }
                 }
               }
               &--square {
                 width: 100%;
                 max-width: 700px;
+                padding: 100px;
                 > .square-inner {
                   width: 100%;
                   &:after {
                     background: url(/img/nz3/nz@x1.jpg) repeat scroll 0 0 / cover;
-
+                    transition: border-radius 400ms ease-in-out;
                     content: "";
                     display: block;
                     height: 0;
@@ -135,46 +140,30 @@ header {
                     border: 1px solid white;
                   }
                 }
+                &:hover {
+                  > .square-inner {
+                    &:after {
+                      border-radius: 20%;
+                      cursor: pointer;
+
+                    }
+                  }
+                }
               }
               &--triangle {
                 width: 100%;
                 max-width: 700px;
-                .triangle-inner {
-                  .kwadrat {
-                    width: 100%;
-                    max-width: 700px;
-                    height: 600px;
-                    border-bottom: 1px solid white;
-                    overflow: hidden;
-                  }
-                  .trojkat {
-                    position: relative;
-                    overflow: hidden;
-                    transform: rotate(45deg) skew(10deg, 10deg);
-                    border-left: 1px solid white;
-                    border-top: 1px solid white;
-
-                    width: 100%;
-                    max-width: 600px;
-                    height: 600px;
-                    margin: 300px 0 0 48px;
-                  }
-
-                  .trojkat_bg {
-                    position: absolute;
-                    width: 200%;
-                    height: 200%;
-                    top: -67%;
-                    left: -50%;
-                    z-index: -1;
-                    background: url(/img/nz4/nz@x1.jpg);
-                    background-size: 100%;
-                    background-position: center top;
-                    transform: skew(-10deg, -10deg) rotate(-45deg);
-                    transition: .3s;
-                    &:hover {
-                      background-size: 90%;
-                    }
+                padding: 100px;
+                .triangle {
+                  width: 100%;
+                  max-width: 700px;
+                  height: 590px;
+                  background: url(/img/nz4/nz@x1.jpg);
+                  background-size: cover;
+                  clip-path: polygon(50% 0%, 10% 100%, 100% 100%);
+                  &:hover {
+                    opacity: 0.7;
+                    cursor: pointer;
                   }
                 }
               }
@@ -206,13 +195,32 @@ header {
   margin: 0 auto; /* 15% from the top and centered */
   border: 1px solid #888;
   width: 90%; /* Could be more or less, depending on screen size */
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-family: Verdana;
+    font-size: 90px;
+    font-weight: normal;
+    padding-right: 30px;
+    padding-top: 30px;
+  }
   .modal-img-container {
     max-width: 1280px;
     width: 100%;
     margin: auto;
     .modal-img {
       width: 100%;
+      padding-bottom: 100px;
     }
+  }
+  .modal-title {
+
+    margin: 80px;
+    text-align: center;
+    font-size: 60px;
+    font-family: "OpenSans", sans-serif;
+    color: rgb(243, 255, 226);
   }
 }
 
@@ -257,6 +265,13 @@ header {
   width: 100%; /* Could be more or less, depending on screen size */
 }
 
+.close {
+  font-size: 100px;
+  font-weight: lighter;
+  margin-right: 40px;
+  color: #fefefe;
+}
+
 /**
  * main wrapper end
  */
@@ -271,3 +286,106 @@ footer {
 /**
  * footer end
  */
+
+@media (min-width: 1440px) {
+  .img-container--triangle {
+    .triangle {
+      height: 590px;
+    }
+  }
+}
+
+@media (min-width: 1190px) and (max-width: 1440px) {
+  .main-wrapper {
+    .gallery {
+      .gallery__content {
+        .container {
+          .gallery__content__row {
+            .column {
+              .img-container--triangle {
+                .triangle {
+                  height: 380px;
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 960px) and (max-width: 1190px) {
+  .main-wrapper {
+    .gallery {
+      .gallery__content {
+        .container {
+          .gallery__content__row {
+            .column {
+              .img-container--triangle {
+                .triangle {
+                  height: 280px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 600px) and (max-width: 960px) {
+  .main-wrapper {
+    .gallery {
+      .gallery__content {
+        .container {
+          .gallery__content__row {
+            flex-direction: column !important;
+            justify-content: space-between;
+            .column {
+              width: 100% !important;
+
+              .img-container--triangle {
+                .triangle {
+                  height: 380px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .main-wrapper {
+    .gallery {
+      .gallery__content {
+        .container {
+          .gallery__content__row {
+            flex-direction: column !important;
+            justify-content: space-between;
+            .column {
+              width: 100% !important;
+              .img-container--triangle {
+                padding: 20px;
+                .triangle {
+                  height: 180px;
+                }
+              }
+              .img-container--rectangle {
+                padding: 20px;
+              }
+              .img-container--square {
+                padding: 20px;
+              }
+              .img-container--circle {
+                padding: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -14,24 +14,24 @@ var imageCollection = {
     0 : {
         src : "/img/nz/nz@x1.jpg",
         srcset: "/img/nz/nz@x1.jpg 1x, /img/nz/nz@x2.jpg 2x, /img/nz/nz@x3.jpg 3x",
-        title: "abdsjakdhbasd"
+        title: "Lake Wakatipu"
     },
     1 : {
         src : "/img/nz2/nz@x1.jpg 1x, ",
         srcset: "/img/nz2/nz@x1.jpg 1x, /img/nz2/nz@x2.jpg 2x, /img/nz2/nz@x3.jpg 3x",
-        title: "abdsjakdhbasd2"
+        title: "Island"
 
     },
     2 : {
         src : "/img/nz3/nz@x1.jpg 1x,",
         srcset: "/img/nz3/nz@x1.jpg 1x, /img/nz3/nz@x2.jpg 2x, /img/nz3/nz@x3.jpg 3x",
-        title: "abdsjakdhbasd3"
+        title: "Pier"
 
     },
     3 : {
         src : "/img/nz 4/nz@x1.jpg 1x,",
         srcset: "/img/nz4/nz@x1.jpg 1x, /img/nz4/nz@x2.jpg 2x, /img/nz4/nz@x3.jpg 3x",
-        title: "abdsjakdhbasd4"
+        title: "Sunset"
     }
 };
 
