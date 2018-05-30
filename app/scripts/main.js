@@ -74,3 +74,38 @@ function openModal(event) {
         break;
     }
 }
+
+var domino = document.getElementById('domino');
+
+
+function changeSpeed(value) {
+    domino.style.animationDuration = (11 - value) + 's';
+}
+
+function changeSize(value) {
+    domino.parentElement.style.transform = 'scale(' +value+ ')';
+}
+
+function right() {
+    domino.classList.remove('left');
+    domino.classList.add('right');
+}
+
+function left() {
+    domino.classList.remove('right');
+    domino.classList.add('left');
+}
+
+function getClassNameByRandom() {
+    var els = document.getElementsByClassName('dots-area');
+    for(var i = 0; i < els.length; i++) {
+        for(var j = 1; j<= 6; j++) {
+            els[i].classList.remove('dots-' + j);
+        }
+        const rand = Math.random() * (6 - 1) + 1;
+        const numb = Math.round(rand);
+        els[i].classList.add('dots-' + numb);
+    }
+}
+
+getClassNameByRandom();
