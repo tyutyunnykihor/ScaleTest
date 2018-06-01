@@ -1,4 +1,7 @@
+// -------------------- task 1,2 -----------------------------------
+
 // Get the modal
+
 var modal = document.getElementById('modal-wrapper');
 // Get the modal image container
 var imgContainer = modal.getElementsByClassName('modal-img-container')[0];
@@ -74,6 +77,13 @@ function openModal(event) {
         break;
     }
 }
+//-------------------------------end of task 1,2 --------------------------
+
+
+
+
+
+// ---------------------------- task 3 -----------------------------------
 
 var domino = document.getElementById('domino');
 
@@ -109,3 +119,5 @@ function getClassNameByRandom() {
 }
 
 getClassNameByRandom();
+
+//--------------------------------- end of task 3 ----------------------

@@ -1,0 +1,141 @@
+
+.domino_task {
+  width: 400px;
+  padding: 40px;
+  margin: auto;
+  background: #b4ffe7;
+  .domino_title{
+    font-size: 72px;
+    font-family: "OpenSans", sans-serif;
+    color: rgb(243, 255, 226);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 80px;
+    font-weight: 600;
+  }
+  .container_domino {
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .paint-area {
+      width : 200px;
+      height: 200px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+    }
+  }
+  .domino {
+    will-change: transform;
+    &.right {
+      animation: right 10s linear infinite;
+    }
+    &.left {
+      animation: left 10s linear infinite;
+    }
+    @keyframes left {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+    @keyframes right {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  .dots-area {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #000000;
+    padding: 15px;
+    .row {
+      height:20px;
+      width:100%;
+      .cell{
+        float: left;
+        width: 20px;
+        height: 20px;
+        .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 100%;
+          background-color:#000000;
+          margin: auto;
+        }
+      }
+    }
+    &.dots-1 {
+      & > .row > .cell > .dot {
+        opacity: 0;
+      }
+      & > .row:nth-child(2) > .cell:nth-child(2) > .dot {
+        opacity: 1;
+      }
+    }
+    &.dots-2 {
+      & > .row > .cell > .dot {
+        opacity: 0;
+      }
+      & > .row:nth-child(1) > .cell:nth-child(3) > .dot,
+      & > .row:nth-child(3) > .cell:nth-child(1) > .dot {
+        opacity: 1;
+      }
+    }
+    &.dots-3 {
+      & > .row > .cell > .dot {
+        opacity: 0;
+      }
+      & > .row:nth-child(1) > .cell:nth-child(3) > .dot,
+      & > .row:nth-child(2) > .cell:nth-child(2) > .dot,
+      & > .row:nth-child(3) > .cell:nth-child(1) > .dot {
+        opacity: 1;
+      }
+    }
+    &.dots-4 {
+      & > .row > .cell > .dot {
+        opacity: 0;
+      }
+
+      & > .row:nth-child(1) > .cell:nth-child(2n - 1) > .dot,
+      & > .row:nth-child(3) > .cell:nth-child(2n - 1) > .dot {
+        opacity: 1;
+      }
+    }
+    &.dots-5 {
+      & > .row > .cell > .dot {
+        opacity: 0;
+      }
+      & > .row:nth-child(1) > .cell:nth-child(2n - 1) > .dot,
+      & > .row:nth-child(2) > .cell:nth-child(2) > .dot,
+      & > .row:nth-child(3) > .cell:nth-child(2n - 1) > .dot {
+        opacity: 1;
+      }
+    }
+    &.dots-6 {
+      & > .row > .cell > .dot {
+        opacity: 0;
+      }
+      & > .row:nth-child(1) > .cell:nth-child(2n - 1) > .dot,
+      & > .row:nth-child(2) > .cell:nth-child(2n - 1) > .dot,
+      & > .row:nth-child(3) > .cell:nth-child(2n - 1) > .dot {
+        opacity: 1;
+      }
+    }
+  }
+}
